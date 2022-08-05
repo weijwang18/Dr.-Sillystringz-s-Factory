@@ -2,7 +2,7 @@
 
 #### By _**Winnie Wang**_  
 
-#### _An MVC application to help Eau Claire manage her employees (stylists) and their clients._  
+#### _An MVC application to help Dr. Sillystringz keep track of their machine repairs._  
 
 ---
 
@@ -29,7 +29,7 @@
 ---
 ## Description
 
-_This is an MVC application that was built using C#. The purpose of this application is to help Eau Claire manage her employees (stylists) and their clients. When the application runs, the user can add a list of stylists working at the salon, and for each stylist, add clients who see that stylist. The stylists have specific specialties, so each client can only see (belong to) a single stylist._
+_This is an MVC application that was built using C#. The purpose of this application is to help Dr. Sillystringz keep track of their machine repairs. When the application runs, the factory manager should be able to add a list of engineers, a list of machines, and specify which engineers are licensed to repair which machines. An engineer can be licensed to repair (belong to) many machines (such as the Drqmweaver, the Bubblewrappinator, and the Laughbox) and a machine can have many engineers licensed to repair it._
 
 ---
 ## Setup and Installation Requirements
@@ -37,11 +37,11 @@ _This is an MVC application that was built using C#. The purpose of this applica
 <details>
 <summary><strong>Initial Setup</strong></summary>
 <ol>
-<li>Copy the git repository url: https://github.com/weijwang18/Eau-Claire-s-Salon
+<li>Copy the git repository url: https://github.com/weijwang18/Dr.-Sillystringz-s-Factory
 <li>Open a shell program and navigate to your desktop.
 <li>Clone the repository for this project using the "git clone" command and including the copied URL.
-<li>While still in the shell program, navigate to the root directory of the newly created file named "Eau-Claire-s-Salon".
-<li>From the root directory, navigate to the "Eau-Claire-s-Salon" directory.
+<li>While still in the shell program, navigate to the root directory of the newly created file named "Dr.-Sillystringz-s-Factory".
+<li>From the root directory, navigate to the "Dr.-Sillystringz-s-Factory" directory.
 <li>Move onto "SQL Workbench" instructions below to re-create database necessary to run this project.
 <br>
 </details>
@@ -49,9 +49,9 @@ _This is an MVC application that was built using C#. The purpose of this applica
 <details>
 <summary><strong>SQL Workbench Configuration</strong></summary>
 <ol>
-<li>Create an appsetting.json file in the "Eau-Claire-s-Salon" directory of the project*  
-   <pre>Eau-Claire-s-Salon
-   └── HairSalon
+<li>Create an appsetting.json file in the "Dr.-Sillystringz-s-Factory" directory of the project*  
+   <pre>Dr.-Sillystringz-s-Factory
+   └── Factory
     └── appsetting.json</pre>
 <li> Insert the following code** : <br>
 
@@ -80,8 +80,8 @@ How to Import a Database:
 <details>
 <summary><strong>To Run</strong></summary>
 Navigate to:  
-   <pre>Eau-Claire-s-Salon
-   └── <strong>HairSalon</strong></pre>
+   <pre>Dr.-Sillystringz-s-Factory
+   └── <strong>Factory</strong></pre>
 
 Run ```$ dotnet restore``` in the console.<br>
 Run ```$ dotnet run``` in the console
@@ -99,4 +99,4 @@ This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be comp
 
 _[MIT License](license)_
 
-Copyright (c) July 29th, 2022 Winnie Wang
+Copyright (c) Aug 8th, 2022 Winnie Wang
