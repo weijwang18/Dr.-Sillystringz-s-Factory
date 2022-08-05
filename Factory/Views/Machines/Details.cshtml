@@ -2,12 +2,34 @@
   Layout = "_Layout";
 }
 
-@model ProjectName.Models.Category;
+@model Factory.Models.Machine;
 
-<h2>Category Details</h2>
+<h2>Machine Details</h2>
 <hr />
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
 
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This machine does not belong to any engineers</p>
+}
+else
+{
+  <h4>Engineers the machine belongs to:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <li>@join.Engineer.Name</li>
+    @using (Html.BeginForm("DeleteEngineer", "Machines"))
+    {
+      @Html.Hidden("joinId", @join.EngineerMachineId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
 
-<p>@Html.ActionLink("Back to ", "Index")</p>
-<p>@Html.ActionLink("Edit ", "Edit", new { id = Model.Id })</p>
-<p>@Html.ActionLink("Delete ", "Delete", new { id = Model.Id })</p>
+<p>@Html.ActionLink("Add a Engineer", "AddEngineer", new { id = Model.MachineId })</p>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
