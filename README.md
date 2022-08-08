@@ -6,16 +6,6 @@
 
 ---
 
-## Table of Contents
-
-**[Technologies Used](#technologies-used)  
-[Description](#description)  
-[Setup/Installation Requirements](#setup-and-installation-requirements)  
-[Known Bugs](#known-bugs)  
-[License](#license)**
-
----
-
 ## Technologies Used
 
 * _C#_
@@ -33,70 +23,82 @@ _This is an MVC application that was built using C#. The purpose of this applica
 
 ---
 ## Setup and Installation Requirements
+**This Setup assumes you have GitBash and MySQL Workbench pre-installed.   
+If needed, please navigate to these links:  
+https://git-scm.com/download/  
+Download Git and follow the setup wizard.  
+https://dev.mysql.com/downloads/workbench/  
+Download MySQL Workbench, follow the setup wizard & create a localhost server on port 3306**
+
+
+*Note: Keep track of your username and password, this will be used in the connection link under,*  
+"**SQL Workbench Configuration**" > "2. Insert the following code:"
+
 
 <details>
 <summary><strong>Initial Setup</strong></summary>
 <ol>
 <li>Copy the git repository url: https://github.com/weijwang18/Dr.-Sillystringz-s-Factory
-<li>Open a shell program and navigate to your desktop.
-<li>Clone the repository for this project using the "git clone" command and including the copied URL.
-<li>While still in the shell program, navigate to the root directory of the newly created file named "Dr.-Sillystringz-s-Factory".
-<li>From the root directory, navigate to the "Dr.-Sillystringz-s-Factory" directory.
-<li>Move onto "SQL Workbench" instructions below to re-create database necessary to run this project.
+<li>Open a terminal and navigate to your Desktop with <strong>cd</strong> command
+<li>Run,   
+<strong>$ git clone https://github.com/weijwang18/Dr.-Sillystringz-s-Factory</strong>
+<li>In the terminal, navigate into the root directory of the cloned project folder "Dr.-Sillystringz-s-Factory".
+<li>Navigate to the projects root directory, "Factory".
+<li>Move onto "SQL Workbench Configuration" instructions below to build the necessary database.
 <br>
 </details>
 
 <details>
 <summary><strong>SQL Workbench Configuration</strong></summary>
 <ol>
-<li>Create an appsetting.json file in the "Dr.-Sillystringz-s-Factory" directory of the project*  
+<li>Create an appsetting.json file in the "Factory" directory  
    <pre>Dr.-Sillystringz-s-Factory
    └── Factory
     └── appsetting.json</pre>
-<li> Insert the following code** : <br>
+<li> Insert the following code: <br>
 
 <pre>{
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database=winnie_wang;uid=root;pwd=[YOUR-PASSWORD-HERE];"
+    "DefaultConnection": "Server=localhost;Port=3306;database=winnie_wang;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }</pre>
-<small>*note: you must include your password in the code block section labeled "YOUR-PASSWORD-HERE".</small><br>
-<small>**note: if you plan to push this cloned project to a public-facing repository, remember to add the appsettings.json file to your .gitignore before doing so.</small>
-
-<li>Once "appsettings.json" file has been created, navigate back to SQL Workbench.
-<li>Import the database named "winnie_wang.sql" from the root directory of the project.<br><br>
-How to Import a Database:
+<small>*Note: you must include your password in the code block section labeled "YOUR-PASSWORD-HERE".</small><br>
+<small>**Note: you must include your username in the code block section labeled "YOUR-USERNAME-HERE".</small><br>
+<small>***Note: if you plan to push this cloned project to a public-facing repository, remember to add the appsettings.json file to your .gitignore before doing so.</small>
+<li>In root directory of project folder "Factory", run  
+<strong>$ dotnet ef migrations add restoreDatabase</strong>
+<li>Then run <strong>$ dotnet ef database update</strong>
 <ol> 
   <li>Open SQL Workbench.
-  <li>Navigate to "Administration" tab in SQL Workbench.
-  <li>Click "Data Import/Restore".
-  <li>Select the radio button "Import from Self-Contained File" and include file path to the sql file of this project you cloned to your machine.
-  <li>In "Default Schema to be Imported to" click "New".
-  <li>Name the schema "winnie_wang" then click "OK".
-  <li>Once named, switch to "Import Progress" tab and click "Start Import".
+  <li>Navigate to "winnie_wang" schema.
+  <li>Click the drop down, select "Tables" drop down.
+  <li>Verify the tables.
   
 </details>
-
 <details>
 <summary><strong>To Run</strong></summary>
 Navigate to:  
    <pre>Dr.-Sillystringz-s-Factory
    └── <strong>Factory</strong></pre>
-
-Run ```$ dotnet restore``` in the console.<br>
-Run ```$ dotnet run``` in the console
+Run ```$ dotnet restore``` in the terminal.<br>
+Run ```$ dotnet run``` in the terminal.
 </details>
 <br>
-
 This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be compatible with other versions. Your milage may vary.
 
 ---
-## Known Bugs
-
-* _No known issues_
 
 ## License
 
-_[MIT License](license)_
+MIT
 
-Copyright (c) Aug 8th, 2022 Winnie Wang
+
+Copyright (c) 8/2022 Winnie Wang
+## Contact Information
+_If you have any questions or concerns, please feel free to reach out to me [via email at: Winnie](mailto:weijwang18@gmail.com) or request to make a contribution. Thank you!_ 
+
+
+**A Big Thanks To:**
+**Garrett Hays @ https://github.com/GarrettHays**    
+**Zachary Waggoner @ https://github.com/CyndaZ42**  
+**for amazing README formatting and instructions!**
